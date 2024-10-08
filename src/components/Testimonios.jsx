@@ -8,7 +8,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CardActions from '@mui/material/CardActions';
 
-const Testimonio = ({ nombre, imagen, alt, testimonio, cargo }) => {
+function Testimonio ({ nombre, imagen, alt, testimonio, cargo }) {
     const [meGusta, setMeGusta] = useState(false);
 
     const toggleMeGusta = () => {
