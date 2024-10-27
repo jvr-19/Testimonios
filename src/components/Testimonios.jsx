@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CardActions from '@mui/material/CardActions';
+import { JavierRR, MyButton, MyFavourite, MyFavouriteBorder } from 'libreria';
 
 function Testimonio ({ nombre, imagen, alt, testimonio, cargo }) {
     const [meGusta, setMeGusta] = useState(false);
@@ -25,20 +23,15 @@ function Testimonio ({ nombre, imagen, alt, testimonio, cargo }) {
                 alt={alt}
             />
             <CardContent>
-                <Typography variant="h5" align='center'>
-                    {nombre}
-                </Typography>
-                <Typography variant="body1" sx={{ marginBottom: 2 }} align='center'>
-                    {cargo}
-                </Typography>
-                <Typography variant="body2" align='justify'>
-                    {testimonio}
-                </Typography>
+                <JavierRR text={nombre} variant="h5" />
+                <JavierRR text={cargo} variant="body1" />
+                <JavierRR text={testimonio} variant="body2" />
             </CardContent>
             <CardActions>
                 <IconButton onClick={toggleMeGusta}>
-                    {meGusta ? <FavoriteIcon sx={{ color: '#634FA2' }} /> : <FavoriteBorderIcon />}
+                    {meGusta ? <MyFavourite sx={{ color: '#634FA2' }} /> : <MyFavouriteBorder />}
                 </IconButton>
+                <MyButton text="Compartir" txtcolor='white' bgcolor='purple' hverbgcolor='blue' hvertxtcolor='black' onClick={() => alert("Testimonio Enviado")}></MyButton>
             </CardActions>
         </Card>
     );
